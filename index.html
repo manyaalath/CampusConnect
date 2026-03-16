@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusConnect – Directory</title>
+  <meta name="description" content="Browse and connect with students and faculty across campus on CampusConnect University Directory." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3L2 8l10 5 10-5-10-5z" fill="white"/>
+            <path d="M2 14l10 5 10-5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span>CampusConnect</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="nav-link active" id="nav-home">Home</a>
+        <a href="admin.html" class="nav-link" id="nav-admin">Admin</a>
+        <a href="profile.html" class="btn-signin" id="nav-signin">Sign In</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <h1 id="hero-title">Directory</h1>
+        <p class="hero-sub">Connect with students and faculty across campus</p>
+      </div>
+    </section>
+
+    <!-- ===================== SEARCH & FILTER ===================== -->
+    <section class="search-section" aria-label="Search and filter">
+      <div class="container">
+        <div class="search-box">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="8.5" cy="8.5" r="5.5" stroke="#94a3b8" stroke-width="1.8"/>
+              <path d="M13.5 13.5L17 17" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <input
+              type="search"
+              id="search-input"
+              class="search-input"
+              placeholder="Search by name, skill, or department"
+              aria-label="Search by name, skill, or department"
+            />
+          </div>
+
+          <div class="filter-row">
+            <div class="filters-left">
+              <div class="filter-group">
+                <button class="filter-btn" id="filter-dept" aria-haspopup="listbox" aria-expanded="false">
+                  Department
+                  <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <ul class="dropdown" id="dropdown-dept" role="listbox" aria-label="Department filter">
+                  <li role="option" data-value="all" class="active">All Departments</li>
+                  <li role="option" data-value="Computer Science">Computer Science</li>
+                  <li role="option" data-value="Mechanical Engineering">Mechanical Engineering</li>
+                  <li role="option" data-value="Digital Arts">Digital Arts</li>
+                  <li role="option" data-value="Physics">Physics</li>
+                  <li role="option" data-value="Business Administration">Business Administration</li>
+                  <li role="option" data-value="Data Science">Data Science</li>
+                  <li role="option" data-value="Psychology">Psychology</li>
+                  <li role="option" data-value="Electrical Engineering">Electrical Engineering</li>
+                </ul>
+              </div>
+
+              <div class="filter-group">
+                <button class="filter-btn" id="filter-role" aria-haspopup="listbox" aria-expanded="false">
+                  Role
+                  <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <ul class="dropdown" id="dropdown-role" role="listbox" aria-label="Role filter">
+                  <li role="option" data-value="all" class="active">All Roles</li>
+                  <li role="option" data-value="STUDENT">Student</li>
+                  <li role="option" data-value="FACULTY">Faculty</li>
+                </ul>
+              </div>
+
+              <div class="filter-group">
+                <button class="filter-btn" id="filter-batch" aria-haspopup="listbox" aria-expanded="false">
+                  Batch
+                  <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <ul class="dropdown" id="dropdown-batch" role="listbox" aria-label="Batch filter">
+                  <li role="option" data-value="all" class="active">All Batches</li>
+                  <li role="option" data-value="2023">2023</li>
+                  <li role="option" data-value="2024">2024</li>
+                  <li role="option" data-value="2025">2025</li>
+                  <li role="option" data-value="2026">2026</li>
+                </ul>
+              </div>
+            </div>
+
+            <button class="clear-filters" id="clear-filters">Clear all filters</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DIRECTORY GRID ===================== -->
+    <section class="directory-section" aria-label="Directory listing">
+      <div class="container">
+        <div class="profile-grid" id="profile-grid" role="list">
+          <!-- Cards injected by JS -->
+        </div>
+
+        <!-- Empty state -->
+        <div class="empty-state hidden" id="empty-state" aria-live="polite">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="28" cy="28" r="18" stroke="#cbd5e1" stroke-width="3"/>
+            <path d="M41 41L56 56" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <p>No results found. Try adjusting your filters.</p>
+        </div>
+
+        <!-- ===================== PAGINATION ===================== -->
+        <nav class="pagination" id="pagination" aria-label="Page navigation">
+          <button class="page-btn nav-arrow" id="prev-page" aria-label="Previous page" disabled>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="page-numbers" id="page-numbers" role="list"></div>
+          <button class="page-btn nav-arrow" id="next-page" aria-label="Next page">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <div class="logo-icon logo-icon--small" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3L2 8l10 5 10-5-10-5z" fill="white"/>
+            <path d="M2 14l10 5 10-5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span>CampusConnect</span>
+      </div>
+      <p class="footer-copy">© 2024 CampusConnect University Directory. All rights reserved.</p>
+      <div class="footer-icons" aria-label="Support links">
+        <a href="#" class="footer-icon-btn" aria-label="Help">
+          <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 7.5a2.5 2.5 0 015 0c0 1.5-2.5 2-2.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="15" r=".8" fill="currentColor"/></svg>
+        </a>
+        <a href="#" class="footer-icon-btn" aria-label="Location">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M10 2C7.24 2 5 4.24 5 7c0 3.75 5 10 5 10s5-6.25 5-10c0-2.76-2.24-5-5-5z" stroke="currentColor" stroke-width="1.6"/><circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a>
+        <a href="#" class="footer-icon-btn" aria-label="Email">
+          <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 7l8 5 8-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

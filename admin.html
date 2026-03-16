@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusConnect – Admin</title>
+  <meta name="description" content="Admin user management panel for CampusConnect University Directory." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3L2 8l10 5 10-5-10-5z" fill="white"/><path d="M2 14l10 5 10-5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <span>CampusConnect</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="nav-link" id="nav-home">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="nav-icon"><path d="M2 6.5L8 2l6 4.5V14H10v-3H6v3H2V6.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          Home
+        </a>
+        <a href="admin.html" class="nav-link active" id="nav-admin">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="nav-icon"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Admin
+        </a>
+        <div class="nav-avatar" id="nav-avatar" aria-label="Admin user">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="#94a3b8" stroke-width="1.6"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main class="admin-main">
+    <div class="container admin-container">
+
+      <!-- Hero heading -->
+      <section class="admin-hero" aria-labelledby="admin-title">
+        <h1 id="admin-title">User Management</h1>
+        <p class="admin-subtitle">Register new students or faculty members to the campus network.</p>
+      </section>
+
+      <!-- Add New Member form card -->
+      <div class="admin-form-card" role="region" aria-label="Add new member">
+
+        <!-- Card heading -->
+        <div class="admin-form-header">
+          <span class="admin-form-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none">
+              <circle cx="8" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M2 18c0-4 2.7-6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M15 12v6M12 15h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h2>Add New Member</h2>
+        </div>
+
+        <div class="admin-form-divider"></div>
+
+        <!-- Form -->
+        <form id="add-member-form" class="admin-form" novalidate aria-label="Add member form">
+
+          <!-- Row 1: Name + Email -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="field-name">Full Name</label>
+              <div class="form-input-wrapper">
+                <span class="form-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M2.5 13.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                </span>
+                <input
+                  type="text"
+                  id="field-name"
+                  name="name"
+                  class="form-input"
+                  placeholder="e.g. Alexander Hamilton"
+                  autocomplete="off"
+                  aria-required="true"
+                />
+              </div>
+              <span class="form-error" id="error-name" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="field-email">Email Address</label>
+              <div class="form-input-wrapper">
+                <span class="form-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none"><rect x="1.5" y="3.5" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M1.5 5.5l6.5 4 6.5-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                </span>
+                <input
+                  type="email"
+                  id="field-email"
+                  name="email"
+                  class="form-input"
+                  placeholder="alex.hamilton@campus.edu"
+                  autocomplete="off"
+                  aria-required="true"
+                />
+              </div>
+              <span class="form-error" id="error-email" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- Row 2: Role + Department -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="field-role">Institutional Role</label>
+              <div class="form-input-wrapper form-select-wrapper">
+                <span class="form-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                </span>
+                <select id="field-role" name="role" class="form-input form-select" aria-required="true">
+                  <option value="" disabled selected>Select user role</option>
+                  <option value="STUDENT">Student</option>
+                  <option value="FACULTY">Faculty</option>
+                </select>
+                <span class="select-chevron" aria-hidden="true">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+              <span class="form-error" id="error-role" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="field-department">Academic Department</label>
+              <div class="form-input-wrapper">
+                <span class="form-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none"><path d="M2 13V6.5L8 3l6 3.5V13" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><rect x="5.5" y="9" width="5" height="4" rx="1" stroke="currentColor" stroke-width="1.3"/></svg>
+                </span>
+                <input
+                  type="text"
+                  id="field-department"
+                  name="department"
+                  class="form-input"
+                  placeholder="e.g. Computer Science & Engineering"
+                  autocomplete="off"
+                  aria-required="true"
+                />
+              </div>
+              <span class="form-error" id="error-department" role="alert"></span>
+            </div>
+          </div>
+
+          <!-- Row 3: Batch + Skills -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="field-batch">Batch / Year</label>
+              <div class="form-input-wrapper">
+                <span class="form-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="11" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 1.5v3M11 1.5v3M2 7h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                </span>
+                <input
+                  type="text"
+                  id="field-batch"
+                  name="batch"
+                  class="form-input"
+                  placeholder="e.g. Class of 2025"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="field-skills">Core Skills / Expertise</label>
+              <div class="form-input-wrapper">
+                <span class="form-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 8l2 2 3-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <input
+                  type="text"
+                  id="field-skills"
+                  name="skills"
+                  class="form-input"
+                  placeholder="e.g. Python, UI Design, Research"
+                  autocomplete="off"
+                />
+              </div>
+              <span class="form-hint">Separate multiple skills with commas.</span>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="admin-form-divider admin-form-divider--bottom"></div>
+
+          <!-- Actions -->
+          <div class="form-actions">
+            <button type="button" class="btn-discard" id="btn-discard">Discard Changes</button>
+            <button type="submit" class="btn-register" id="btn-register">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <rect x="2" y="2" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Register Member
+            </button>
+          </div>
+
+        </form>
+      </div><!-- /admin-form-card -->
+
+    </div><!-- /container -->
+  </main>
+
+  <!-- ===================== SUCCESS MODAL ===================== -->
+  <div class="modal-overlay hidden" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div class="modal-icon" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" fill="#dcfce7"/><path d="M12 20l6 6 10-10" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2 class="modal-title" id="modal-title">Member Registered!</h2>
+      <p class="modal-body" id="modal-body"></p>
+      <button class="btn-register modal-close" id="modal-close">Done</button>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="admin-footer" aria-label="Admin footer">
+    <div class="container">
+      <p class="admin-footer-copy">© 2024 CampusConnect Administration. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="admin-toast" role="alert" aria-live="polite"></div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
