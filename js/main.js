@@ -11,7 +11,7 @@
 const profiles = [
   {
     id: 1,
-    name: 'Dr. Sarah Chen',
+    name: 'Dr. Sarah Malik',
     role: 'FACULTY',
     department: 'Computer Science',
     meta: 'Research Lead • Senior Professor',
@@ -21,7 +21,7 @@ const profiles = [
   },
   {
     id: 2,
-    name: 'Marcus Thorne',
+    name: 'Manav Dahiya',
     role: 'STUDENT',
     department: 'Mechanical Engineering',
     meta: 'Batch of 2024 • Robotics Club',
@@ -41,7 +41,7 @@ const profiles = [
   },
   {
     id: 4,
-    name: 'James Wilson',
+    name: 'Dr. James Wil',
     role: 'FACULTY',
     department: 'Physics',
     meta: 'Quantum Lab • Faculty Advisor',
@@ -51,7 +51,7 @@ const profiles = [
   },
   {
     id: 5,
-    name: 'Elena Rodriguez',
+    name: 'Era Khan',
     role: 'STUDENT',
     department: 'Business Administration',
     meta: 'Batch of 2023 • Alumna',
@@ -61,7 +61,7 @@ const profiles = [
   },
   {
     id: 6,
-    name: 'Kevin Park',
+    name: 'Kevin Joseph',
     role: 'STUDENT',
     department: 'Data Science',
     meta: 'Batch of 2026 • AI Ethics Club',
@@ -71,7 +71,7 @@ const profiles = [
   },
   {
     id: 7,
-    name: 'Sophie Muller',
+    name: 'Soniya Sharma',
     role: 'STUDENT',
     department: 'Psychology',
     meta: 'Batch of 2024 • Peer Counselor',
@@ -81,7 +81,7 @@ const profiles = [
   },
   {
     id: 8,
-    name: 'David Adeyemi',
+    name: 'Dhruv Kumar',
     role: 'FACULTY',
     department: 'Electrical Engineering',
     meta: 'Circuits Lab • Lead Researcher',
@@ -101,7 +101,7 @@ const profiles = [
   },
   {
     id: 10,
-    name: 'Prof. Alan Brooks',
+    name: 'Prof. Aman Sahni',
     role: 'FACULTY',
     department: 'Mechanical Engineering',
     meta: 'Thermal Lab • Dept. Head',
